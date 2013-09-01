@@ -9,12 +9,13 @@
     
 j='jump'
 l='land'
-f='full'
-e='empty'
+ 
 totalmoves=[]
-pegs=[]*15
+pegs=[]
 for i in range(0,14):
-    pegs[i]=f
+    pegs.append(True)
+    #print i
+pegs.append(False)
 #fills board with pieces   leave 14 open 
 moves0= [ [j,1] ,[l, 2] , [ [j, 5] , [l , 9] ] ]
 totalmoves.append(moves0)
@@ -56,11 +57,17 @@ totalmoves.append(moves13)
 totalmoves.append(moves14)
 
 def isvalid(start,end):
-    #takes 
-    a=0
+    #takes [][]
+    s=start[0][1]
+    e= end[0][1]
+    if s & e==False:
+        return True
+    else :
+        return False
+     
+    
 
-
-print totalmoves[0][0][0]
+print  isvalid(totalmoves[0][0],totalmoves[1][0])
 
 
 
